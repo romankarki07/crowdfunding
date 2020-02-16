@@ -7,9 +7,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 var expressValidator = require('express-validator');
-var expressSession = require('express-session');
+const session = require('express-session');
+
 app.use(expressValidator());
-app.use(expressSession({secret:'max', saveUninitialized: false, resave: false}));
+app.use(session({secret:'masdsdsx', saveUninitialized: true, resave: true,
+cookie: {
+	secure:false,
+    maxAge: 1000 * 60 * 60 * 24 * 7
+},
+}));
 app.set('view engine', 'ejs');
 app.set('views', __dirname+'/views');
 var router = require('./routers/routes');
