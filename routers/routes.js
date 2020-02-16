@@ -11,6 +11,7 @@ router.get('/create-project', routerData.createProject);
 // router.get('/:bid', routerData.projectDetails);
 router.get('/login', routerData.loginPage);
 router.get('/projectdetails/:id', routerData.singleDetails);
+
 // router.post('/:bid', routerData.userComment);
 router.post('/submit', routerData.postSignup);
 router.get('/logout', (req, res)=> {
