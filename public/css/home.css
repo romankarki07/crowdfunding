@@ -1,0 +1,151 @@
+body
+{
+    margin: 0;
+}
+.header
+{
+    border-bottom: 5px solid #3966a1;
+    padding: 4px;
+    /* background: linear-gradient(#fcfcfc,#f3f3f3); */
+    background: #1a5289;
+}
+.header a
+{
+    float: left;
+    margin-top: -2%;
+    margin-right: 3%;
+}
+.header a button
+{
+    border-radius: 5%;
+    border: 1px solid #253383;
+    padding: 7px 35px 6px 35px;
+    background: #1e4589;
+    color: white;
+    font-size: 16px;
+}
+.menus
+{
+    float: right;
+    width: 49%;
+margin-top: -2%;
+}
+.header h2
+{
+    margin-left: 5%;
+    color: #fffcfc;
+    font-weight: 700;
+    font-size: 22px;
+}
+.other-featured
+{
+    background: whitesmoke;
+    height: 320px;
+    background: whitesmoke;
+    height: 400px;
+    width: 136%;
+    margin-left: -18%;
+}
+.cover-img img
+{
+    width: 100%;
+height: 389px;
+}
+/* .dynamic
+{
+    width: 74%;
+margin: 6px auto;
+padding: 3%;
+} */
+.singleBook
+{
+    width: 22%;
+    float: left;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    border: 1px solid #d6dde4;
+padding: 4px;
+padding-bottom: 21px;
+}
+.book-title
+{
+    margin-bottom: -8px;
+margin-left: 3%;
+font-size: 20px;
+color: black;
+width: 95%;
+}
+.singleBook img
+{
+    background: #d7d4d4;
+    position: absolute;
+     width: 21.3%;
+    height: 124px;
+}
+.bookTitleAuthor
+{
+    margin-bottom: -9px;
+    font-size: 16px;
+    color: #938888;
+    font-family: san serif;
+    margin-left: 3%;
+}
+.book-details
+{
+    margin-top: 36%;
+padding: 1px;
+}
+.create-book h3
+{
+    text-align: center;
+}
+.cover-image
+{
+    width: 34%;
+background: #f9f9f9;
+padding: 27px;
+float: left;
+}
+.forms-data
+{
+    width: 56%;
+background: #f9f9f9;
+padding: 27px;
+float: left;
+}
+.clear
+{
+    clear: both;
+}
+.create-book form
+{
+    border: 4px solid #f8f8f8;
+}
+/* footer css
+ */
+ .footer-footer
+ {
+    width: 20%;
+    float: left;
+    margin-left: 4%;
+    color: #cccbcb;
+ }
+ .footer-links
+ {
+    width: 70%;
+    float: left;
+    margin-top: 2%;
+ }
+ .footer-links a
+ {
+    font-size: 20px;
+    color: #bbbbc8;
+    margin-left: 3%;
+    margin-right: 9%;
+    text-decoration: none;
+ }
+ .footer
+ {    border-top: 3px solid #bfbed1;
+    background: #1f1e1e;
+    height: 100px;
+ }

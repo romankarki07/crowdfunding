@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html  ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Crowd Funding</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"  href="../css/home.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-controller="controller">
+ <div class="bg-danger row m-0 p-1 sticky-top" style="z-index: 9999999;">
+     <div class="col-3">
+         <h6 class="text-white fa-2x text-capitalize m-0"><i class="mr-2 border border-danger bg-primary px-1 mt-2 rounded">CF</i>Crowd Funding</h6>
+     </div>
+     <div class="col-5">
+         <div class="row m-0 p-2">
+            <input type="text" name="" id="" placeholder="Search..." class="form-control rounded form-control-sm w-75">
+            <div class="btn btn-success btn-sm float-right ml-1">Search</div>
+         </div>
+     </div>
+     <div class="col-4 p-1">
+         <a href="/" ><button class="btn btn-danger" <%if(pid=='home'){%>style="background:#132977;"<%}%>">Home</button></a>
+            <%if(isLoggedIn){%>
+                <a href="/create-project"><button class="btn btn-danger" <%if(pid=='create-project'){%>style="background:#132977;"<%}%>>Create Project</button></a>
+            <%}%>    
+            <%if(!isLoggedIn){%>
+                <a href="/login"><button class="btn btn-danger" <%if(pid=='login'){%>style="background:#132977;"<%}%>>Login</button></a><a href="/signup">
+             <button class="btn btn-danger" <%if(pid=='signup'){%>style="background:#132977;"<%}%>>Signup</button></a>
+             <%}%>   
+             <%if(isLoggedIn){%>
+                <div class="dropdown float-right">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                      <label class="m-0 text-white font-weight-bold"><%= session.firstName%> <%= session.lastName%></label>
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                  </div>
+            <%}%> 
+            </div>
+ </div>
+ <div class="dynamic">
+     <!-- <img src="uploaded-images/15186879531292.jpg"> -->
+         <%if(pid=='create-project'){%>
+             <% include templates/createproject.ejs %>
+          <%}%>
+          <%if(pid=='home'){%>
+             <% include templates/allprojects.ejs %>
+          <%}%>
+          <%if(pid=='details'){%>
+             <% include templates/project.ejs %>
+           <%}%>
+           <%if(pid=='signup'){%>
+             <% include templates/signup.ejs %>
+           <%}%>
+           <%if(pid=='login'){%>
+             <% include templates/login.ejs %>
+           <%}%>
+ </div>
+ <div class="clear"></div>
+ <div class="footer">
+     <div class="footer-head">
+          <div class="footer-footer">
+                 <h2>Crowd Funding</h2>
+                 <p>Copyrights</p>
+          </div>
+          <div class="footer-links">
+             <a href="/signup">Create an account</a>
+             <a href="#">About</a>
+             <a href="/">Jump to home</a>
+             <a href="/signup">Privacy policy</a>
+          </div>
+    </div>
+ </div>
+ </div>
+</body>
+
+<script>
+
+var app = angular.module('app', []);
+
+app.controller('controller', function($scope, $http, $timeout){
+    $scope.addProject = function(){
+        console.log($scope.project);
+        // adding form data
+        var file = $('#files')[0].files[0];
+        var formData = new FormData;
+        for(key in $scope.project){
+            formData.append(key, $scope.project[key])
+        }
+        formData.append('files', file)
+        console.log(formData);
+        
+        $http.post('/project', formData,{
+                    transformRequest: angular.identity,
+                    headers: {
+                        'Content-Type': undefined
+                    }})
+        .then((response)=>{
+            $scope.message = response.data;
+            scope.project = {}
+            $timeout(function () {
+                $scope.message = '';
+            }, 3000);
+        })
+    }
+        //getting all projects
+    $http.get('/project')
+    .then((response)=>{
+        $scope.projects = response.data;
+    })
+})
+</script>
+</html>

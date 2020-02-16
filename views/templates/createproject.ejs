@@ -1,0 +1,40 @@
+<div class="create-book container">
+    <h3  class="text-secondary border-bottom mt-3 mb-2 pb-5 mt-5">Create Your own Project</h3>
+      <div class="row">
+      <div class="col-6 mr-auto">
+          <h5 class="text-secondary text-left">Invest in the projects and earn rewards</h5>
+          <h1 class="text-success font-weight-bold text-left">Create your project now</h1>
+          <img src="./images/funding.jpg" alt="" width="100%">
+        </div>
+      <form class="col-6 p-3">
+        <h4 class="bg-primary text-white rounded p-3">Fill All The Details</h4>
+          <div class=" row m-0  bg-light">
+                <div class="form-group col-6">
+                   <label>Project Title</label><br>
+                   <input type="text" class="form-control" name="Title" ng-model="project.title">
+                </div>
+                 <div class="form-group col-6">
+                   <label>Project Name</label><br>
+                    <input type="text" class="form-control" name="name"  ng-model="project.name">
+                 </div>
+                 <div class="form-group col-6">
+                  <label>Description</label><br>
+                  <textarea placeholder="Describe Your Project" class="form-control"  ng-model="project.description" rows="3" cols="30" name="aboutProject"></textarea>
+                </div>
+                 <div class="form-group col-6">
+                   <label>Type Of Project</label><br>
+                   <input type="text" class="form-control" name="type"  ng-model="project.type">
+                 </div>
+                 <div class="cover-image col-12">
+                   <input class=" form-control" type="file" name="coverImage" id="files">
+               </div>
+               <div class="addproject-btn col-12">
+                 <button  class="btn btn-primary btn-sm" ng-click="addProject()">Add Project</button>
+               </div> <br/> <br/> <br/> 
+               <p ng-if="message" class="alert alert-success">
+                 <b>Success.</b> {{message}}
+               </p>
+         </div>
+    </form>
+    </div>
+</div>

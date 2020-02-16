@@ -1,0 +1,157 @@
+<div class="sign-up-container">
+    <div class="signup-pic">
+        <img src="images/crowdfunding.png" alt="library image"><br>
+        <p>Create your own project and get started!! <br> 
+        <a href="#">Click for more information and our policy</a>
+        </p>
+    </div>
+    <div class="signup">
+        <form action="/submit" method="post">
+            <h3>Sign Up</h3>
+            <label for="name">Name</label><br>
+            <input type="text" name="firstName" id="" placeholder="First Name" required="firstname">
+            <input type="text" name="lastName" id="" placeholder="Last Name" required="lastname"><br>
+            <label for="Email">Email</label><br>
+            <input type="email" name="email" id="" placeholder="abc@example.com" required="email">
+            <select name="usertype" id="Users" required>
+                <option>I am a</option>
+                <option value="ent_" >Entrepreneur</option>
+                <option value="inv_">Investor</option>
+            </select>
+            <label for="password">Password</label><br>
+            <input type="password" name="password" id="" placeholder="Choose Password">
+            <input type="password" placeholder="Confirm Password" name="confirmPassword"><br>
+            <button type="submit" name="Signup" id="">Create Account</button><br>
+           <div class="error-section">
+               <%if(success==true){%>
+                   <div class="success-message">
+                       <h3>User Successfully Registered!!</h3>
+                   </div>
+                <%}else{%>
+                    <%if(errors){%>
+                        <ul>
+                               <%for(var i=0; i<errors.length; i++){%>
+                                   <li id="error<%=i%>"><%= errors[i].msg%></li>
+                                <%}%>
+                        </ul>
+                    <%}%>
+                 <%}%>   
+           </div>
+        </form>
+        </div>
+</div>
+
+<style>
+  .error-section ul
+  {
+    position: absolute;
+margin-top: -20.5%;
+margin-left: 2%;
+list-style: none;
+font-size: 18px;
+  }
+    .error-section ul li
+    {
+        /* background: #f07316; */
+        color:red;
+    }
+    #error0
+    {
+        margin-top: 2%;
+    }
+    #error3
+    {
+        margin-top: 68%;
+position: absolute;
+margin-left: 15%;
+
+    }
+    #error2
+    {
+        margin-top: 30%;
+position: absolute;
+width: 111%;
+    }
+    #error1
+    {
+        position: absolute;
+margin-left: 109%;
+width: 88%;
+margin-top: -11%;
+padding: 3px;
+    }
+    .success-message
+    {
+        margin-top: 4%;
+background: #c6c9c4;
+color: #26aa56;
+    }
+    .success-message h3
+    {
+        margin: 0;
+padding: 3%;
+    }
+    .signup-pic p
+    {
+        font-size: 21px;
+text-align: center;
+color: #565660;
+    }
+      .signup button{
+        padding: 11px;
+width: 44%;
+border-radius: 3%;
+font-size: 20px;
+background: #16a75f;
+border: 1px aliceblue;
+color: white;
+    }
+    .signup h3
+    {
+        font-size: 30px;
+margin-top: -3%;
+    }
+    .signup h4
+    {
+        font-size: 25px;
+margin-top: -3%;
+    }
+    .signup input,select
+    {
+        width: 45%;
+        margin-bottom: 3%;
+padding: 8px;
+font-size: 20px;
+border: 1px solid #92b6de;
+
+    }
+    .signup label
+    {
+        font-size: 20px;
+    }
+    .sign-up-container
+    {
+        background: linear-gradient(#dadada, #ccc,#e6e6e6);
+height: 619px;
+    }
+    .signup-pic img
+    {
+        width: 99%;
+        height: 435px;
+
+    }
+    .signup-pic
+    {
+        margin-top: 4%;
+        width: 50%;
+       float: left;
+    }
+    .signup
+    {
+        margin-top: 4%;
+        padding: 2%;
+        /* width: 50%; */
+        width: 42%;
+       float: right;
+    }
+</style>

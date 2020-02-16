@@ -1,0 +1,76 @@
+<div class="login">
+ <form action="" method="post">
+    <h3>Login Form</h3>
+    <!-- <label for="Email">Email:</label><br> -->
+    <input type="email" placeholder="Your Email" name="userEmail"><br>
+    <!-- <label for="password">Password:</label><br> -->
+    <input type="password" placeholder="Your Password" name="userPassword"><br>
+    <button type="submit" name="submit" id="" value="Login">Login</button><br>
+    <h4><%= error%></h4>
+    <div class="login-links">
+    <a href="/signup">Don't have an account? Register</a>
+    
+    <a href="#">Forgot Password</a>
+</div>
+</div>
+</form>
+<style>
+    .login-links{
+        margin-top: 11px;
+        width: 107%;
+    }
+    .login{
+        width: 39%;
+margin: 4% auto;
+background: #f8f8f8;
+padding: 3%;
+border: 2px solid #e3e8ed;
+    }
+    .login h3
+    {
+        text-align: center;
+        margin-top: -2%;
+border-bottom: 1px solid #91c2ed;
+padding: 6px;
+/* border-bottom: 1px solid #d0d4d7; */
+font-size: 29px;
+    }
+    .login label
+    {
+        font-size: 25px;
+color: #c66818;
+font-family: san;
+
+    }
+    .login a
+    {
+        /* margin-left: 25%; */
+        font-size: 19px;
+color: #2271cb;
+margin-right: 3%;
+    }
+    .login button{
+        padding: 2%;
+width: 35%;
+margin-top: 3%;
+font-size: 18px;
+background: #1e4589;
+border: 1px aliceblue;
+color: white;
+    }
+    .login form
+    {
+        width: 64%;
+margin: 0 auto;
+    }
+    .login input
+    {
+        width: 100%;
+padding: 9px;
+font-size: 19px;
+background: white;
+border: 1px solid #accbe7;
+margin-top: 2%;
+margin-bottom: 2%;
+    }
+</style>

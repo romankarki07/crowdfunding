@@ -1,0 +1,22 @@
+{
+	"friends": 
+	   [{
+          "title":"Class Friend",
+          "name":"Sandip Sharma",
+          "shortname":"Sandip",
+          "summary":"Intro",
+          "description":"<p>Sandip Was born in Pokhara</p>"   
+	   },{
+	   	  "title":"Best Friend",
+          "name":"Mayank Shahi",
+          "shortname":"Mayank",
+          "summary":"Intro",
+          "description":"<p>Sandip Was born in Kalikot</p>"   
+	    },{
+	      	"title":"Me",
+          "name":"Kamal Bdr Shahi",
+          "shortname":"Kamal",
+          "summary":"Intro",
+          "description":"<p>Sandip Was born in Manma, Kalikot</p>"   
+	   }]
+}
